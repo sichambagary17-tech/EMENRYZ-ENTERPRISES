@@ -61,14 +61,13 @@
 <section id="quote" class="bg-zinc-900 text-white py-16">
 <div class="max-w-3xl mx-auto p-6">
 <h2 class="text-3xl font-black text-center">Get Free Quote - Kalingalinga</h2>
-<p class="text-center text-zinc-400 mt-2">We will call you back within 1 hour</p>
-<form name="emenryz-quote" method="POST" data-netlify="true" class="mt-8 grid gap-4 bg-zinc-800 p-6 rounded-2xl">
-  <input type="hidden" name="form-name" value="emenryz-quote">
-  <input name="name" placeholder="Your Name" required class="p-3 rounded-lg text-black">
-  <input name="phone" placeholder="Phone / WhatsApp" required class="p-3 rounded-lg text-black">
-  <select name="service" class="p-3 rounded-lg text-black"><option>Sliding Gate</option><option>Burglar Bars</option><option>Tank Stand</option><option>Trailer</option><option>Other Welding</option></select>
-  <textarea name="message" placeholder="E.g. 4m sliding gate, location Mtendere..." class="p-3 rounded-lg text-black h-24"></textarea>
-  <button class="bg-orange-500 py-3 rounded-full font-black text-lg">SEND TO EMENRYZ - 0977916112</button>
+<p class="text-center text-zinc-400 mt-2">We will reply on WhatsApp within 30 minutes</p>
+<form id="quoteForm" class="mt-8 grid gap-4 bg-zinc-800 p-6 rounded-2xl">
+  <input id="qName" name="name" placeholder="Your Name" required class="p-3 rounded-lg text-black">
+  <input id="qPhone" name="phone" placeholder="Phone / WhatsApp" required class="p-3 rounded-lg text-black">
+  <select id="qService" name="service" class="p-3 rounded-lg text-black"><option>Sliding Gate</option><option>Burglar Bars</option><option>Tank Stand</option><option>Trailer</option><option>Other Welding</option></select>
+  <textarea id="qMessage" name="message" placeholder="E.g. 4m sliding gate, location Mtendere..." class="p-3 rounded-lg text-black h-24"></textarea>
+  <button type="submit" class="bg-orange-500 py-3 rounded-full font-black text-lg"><i class="fa-brands fa-whatsapp"></i> SEND TO WHATSAPP</button>
 </form>
 <div class="mt-8 text-center text-zinc-400">
   <p><i class="fa-solid fa-location-dot"></i> Kalingalinga along Alick Nkhata Road, Lusaka</p>
@@ -76,6 +75,18 @@
 </div>
 </div>
 </section>
+
+<script>
+document.getElementById('quoteForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var name = document.getElementById('qName').value;
+  var phone = document.getElementById('qPhone').value;
+  var service = document.getElementById('qService').value;
+  var msg = document.getElementById('qMessage').value;
+  var text = "Hello EMENRYZ ENTERPRISES,%0A%0AName: " + name + "%0APhone: " + phone + "%0AService: " + service + "%0ADetails: " + msg;
+  window.open("https://wa.me/260977916112?text=" + text, "_blank");
+});
+</script>
 
 <footer class="text-center p-8 text-zinc-500 text-sm">© 2026 EMENRYZ ENTERPRISES - Kalingalinga, Lusaka | Built for quality</footer>
 
